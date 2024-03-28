@@ -1,0 +1,67 @@
+{
+    "experiment_name": "mapl_cifar10_c20_nol_sc1",
+    "type": "decentralized",
+    "method": "mapl",
+    "train": true,
+    "resume": false,
+    "configurations": {
+        "log_path": "../logs",
+        "data_path": "../data",
+        "model_path": "../models",
+        "output_path": "../outputs",
+        "device": "cuda",
+        "seed": 40,
+        "num_clients": 20
+    },
+    "networkConfiguration": {
+        "mixingMatrixAlgo": "average",
+        "probEdgeCreation": 0.5,
+        "gossipSteps": 15,
+        "aggregation": "neighbor"
+    },
+    "modelConfiguration": {
+        "models": "resnet18,shufflenet,googlenet,alexnet",
+        "dataset": "Cifar10",
+        "modelHetero": true,
+        "sslloss": "supcon",
+        "loss": "crossentropy",
+        "regularizer": "mse",
+        "learnGraphWeights": false
+    },
+    "hyperParameters": {
+        "batchSize": 64,
+        "testBatchSize": 8,
+        "embeddingSize": 512,
+        "proxLossWeight": 0.1,
+        "graphl2weight": 0.5,
+        "num_workers": 4,
+        "temp": 100,
+        "use_solver": false,
+        "optimizerConfig": {
+            "type": "Adam",
+            "learningRate": 0.0001,
+            "momentum": 0.5,
+            "weightDecay": 0
+        }
+    },
+    "learningParameters": {
+        "rounds": 400,
+        "epochsPerRound": 1,
+        "glepochs": 1,
+        "warmUpEpochs": 100,
+        "dataSampler": "custom",
+        "samplerArgs": {
+            "ways": 5,
+            "shots": 300,
+            "train_shots_max": 200,
+            "test_shots": 15,
+            "test_ratio": 1,
+            "stdev_ways": 2,
+            "stdev_shots": 25,
+            "alpha": 0.5,
+            "num_clusters": 2,
+            "scenario": 1,
+            "num_overlap": 4
+        }
+    }
+}
