@@ -5,7 +5,7 @@ This is the official repository for our paper "Model Agnostic Peer-to-peer Learn
 > **Model Agnostic Peer-to-peer Learning**            
 > Sayak Mukherjee, Andrea Simonetto, Hadi Jamali-Rad             
 >              
->[[`arXiv`](README.md)]
+>[[`arXiv`](https://arxiv.org/abs/2403.19792)]
 
 ## Overview
 Effective collaboration among heterogeneous clients in a decentralized setting is a rather unexplored avenue in the literature. To structurally address this, we introduce Model Agnostic Peer-to-peer Learning (coined as MAPL) a novel approach to simultaneously learn heterogeneous personalized models as well as a collaboration graph through peer-to-peer communication among neighboring clients. MAPL is comprised of two main modules: (i) local-level Personalized Model Learning (PML), leveraging a combination of intra- and inter-client contrastive losses; (ii) network-wide decentralized Collaborative Graph Learning (CGL) dynamically refining collaboration weights in a privacy-preserving manner based on local task similarities. Our extensive experimentation demonstrates the efficacy of MAPL and its competitive (or, in most cases, superior) performance compared to its centralized model-agnostic counterparts without relying on any central server.
@@ -46,6 +46,20 @@ python  main.py --exp_config ..\configs\<config-file-name>.json
 ```
 
 We provide the configuration files for the running MAPL with heterogeneous models for scenarios 1 - 4.
+
+## Citation
+
+If you make use of the code, please cite the following work:
+```
+@misc{mukherjee2024mapl,
+      title={MAPL: Model Agnostic Peer-to-peer Learning}, 
+      author={Sayak Mukherjee and Andrea Simonetto and Hadi Jamali-Rad},
+      year={2024},
+      eprint={2403.19792},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
 
 ## License
 
